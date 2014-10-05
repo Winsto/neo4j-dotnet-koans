@@ -4,3 +4,7 @@ obj
 
 # mstest test results
 TestResults
+
+# local user files
+*.suo
+*.csproj.user
