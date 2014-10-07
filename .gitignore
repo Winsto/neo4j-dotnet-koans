@@ -8,3 +8,6 @@ TestResults
 # local user files
 *.suo
 *.csproj.user
+
+# packages folder
+packages/*
