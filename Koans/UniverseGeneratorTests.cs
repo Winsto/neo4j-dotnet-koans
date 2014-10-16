@@ -14,19 +14,5 @@ namespace Koans
     [TestClass]
     public class UniverseGeneratorTests
     {
-        [TestMethod]
-        public void GenerateUniverseTest()
-        {
-            GraphClient db = DatabaseHelper.CreateDatabase();
-            var generator = new DoctorWhoUniverseGenerator(db);
-            generator.GenerateUniverse();
-        }
-
-        [TestMethod]
-        public void UpdateExistingNodeTest()
-        {
-            GraphClient db = DatabaseHelper.CreateDatabase();
-
-        }
     }
 }

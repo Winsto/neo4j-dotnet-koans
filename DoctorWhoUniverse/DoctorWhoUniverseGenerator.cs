@@ -11,14 +11,17 @@ namespace DoctorWhoUniverse
     public class DoctorWhoUniverseGenerator
     {
         private GraphClient db;
-        public DoctorWhoUniverseGenerator(GraphClient db)
+        public DoctorWhoUniverseGenerator()
         {
-            this.db = db;
+            db = DatabaseHelper.ConnectToDatabase();
         }
 
-        public void GenerateUniverse()
+        public Universe GenerateUniverse()
         {
+            return new Universe();
         }
 
+
+        public Models.Character TheDoctor { get; set; }
     }
 }

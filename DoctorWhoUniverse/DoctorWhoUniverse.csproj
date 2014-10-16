@@ -75,6 +75,7 @@
     <Compile Include="DoctorWhoUniverseGenerator.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\CharacterNameComparer.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Planet.cs" />
     <Compile Include="Models\Species.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Relationships\Constants.cs" />
     <Compile Include="Services\ActorService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Universe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

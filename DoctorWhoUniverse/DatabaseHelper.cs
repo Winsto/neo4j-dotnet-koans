@@ -9,17 +9,16 @@ namespace DoctorWhoUniverse
 {
     public class DatabaseHelper
     {
-        private GraphClient db;
+        private static GraphClient db;
 
-        public DatabaseHelper(GraphClient db)
+        static DatabaseHelper()
         {
-            this.db = db;
+            db = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            db.Connect();
         }
 
-        public static GraphClient CreateDatabase()
+        public static GraphClient ConnectToDatabase()
         {
-            var db = new GraphClient(new Uri("http://localhost:7474/db/data"));
-            db.Connect();
             return db;
         }
 

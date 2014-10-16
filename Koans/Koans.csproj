@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Koan01.cs" />
     <Compile Include="Koan02.cs" />
+    <Compile Include="Koan03.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniverseGeneratorTests.cs" />
   </ItemGroup>
