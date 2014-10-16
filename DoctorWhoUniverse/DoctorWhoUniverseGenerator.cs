@@ -11,6 +11,7 @@ namespace DoctorWhoUniverse
     public class DoctorWhoUniverseGenerator
     {
         private GraphClient db;
+
         public DoctorWhoUniverseGenerator()
         {
             db = DatabaseHelper.ConnectToDatabase();
@@ -23,5 +24,16 @@ namespace DoctorWhoUniverse
 
 
         public Models.Character TheDoctor { get; set; }
+
+        private void AddUniquenessConstraints()
+        {
+            db.Cypher.
+                CreateUniqueConstraint("a:Actor", "a.ActorName").
+                CreateUniqueConstraint("c:Character", "c.CharacterName").
+                CreateUniqueConstraint("e:Episode", "e.Title").
+                CreateUniqueConstraint("p:Planet", "p.PlanetName").
+                CreateUniqueConstraint("s:Species", "s.SpeciesName").
+                ExecuteWithoutResults();
+        }
     }
 }

@@ -7,7 +7,7 @@ using Neo4jClient.Gremlin;
 
 namespace DoctorWhoUniverse
 {
-    public class DatabaseHelper
+    public static class DatabaseHelper
     {
         private static GraphClient db;
 
