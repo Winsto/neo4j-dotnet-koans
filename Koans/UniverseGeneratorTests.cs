@@ -22,7 +22,7 @@ namespace Koans
     {
 
         [ClassInitialize]
-        public static void startDatabase() 
+        public static void CreateTheDatabase(TestContext context)
         {
             new DoctorWhoUniverseGenerator().GenerateUniverse();
         }
