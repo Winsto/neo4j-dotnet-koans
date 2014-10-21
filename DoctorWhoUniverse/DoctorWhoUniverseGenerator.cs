@@ -17,9 +17,9 @@ namespace DoctorWhoUniverse
             db = DatabaseHelper.ConnectToDatabase();
         }
 
-        public Universe GenerateUniverse()
+        public void GenerateUniverse()
         {
-            return new Universe();
+            AddUniquenessConstraints();
         }
 
 
@@ -27,13 +27,11 @@ namespace DoctorWhoUniverse
 
         private void AddUniquenessConstraints()
         {
-            db.Cypher.
-                CreateUniqueConstraint("a:Actor", "a.ActorName").
-                CreateUniqueConstraint("c:Character", "c.CharacterName").
-                CreateUniqueConstraint("e:Episode", "e.Title").
-                CreateUniqueConstraint("p:Planet", "p.PlanetName").
-                CreateUniqueConstraint("s:Species", "s.SpeciesName").
-                ExecuteWithoutResults();
+            db.Cypher.CreateUniqueConstraint("a:Actor", "a.ActorName").ExecuteWithoutResults();
+            db.Cypher.CreateUniqueConstraint("c:Character", "c.CharacterName").ExecuteWithoutResults();
+            db.Cypher.CreateUniqueConstraint("e:Episode", "e.Title").ExecuteWithoutResults();
+            db.Cypher.CreateUniqueConstraint("p:Planet", "p.PlanetName").ExecuteWithoutResults();
+            db.Cypher.CreateUniqueConstraint("s:Species", "s.SpeciesName").ExecuteWithoutResults();
         }
     }
 }
