@@ -11,3 +11,6 @@ TestResults
 
 # packages folder
 packages/*
+
+# vim backup files
+*~
